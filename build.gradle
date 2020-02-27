@@ -1,16 +1,23 @@
 plugins {
+    id 'java'
     id 'org.spongepowered.plugin' version '0.9.0'
 }
 
+// This may not be required, but has solved issues in the past
+compileJava.options.encoding = 'UTF-8'
 group = pluginGroup
 version = pluginVersion
+sponge.plugin.id = pluginId
+description = 'Here lies an example plugin definition'
 
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
+
+repositories {
+    jcenter()
+}
 
 dependencies {
     compileOnly 'org.spongepowered:spongeapi:7.1.0'
     annotationProcessor 'org.spongepowered:spongeapi:7.1.0'
 }
-
-sponge.plugin.id = pluginId
